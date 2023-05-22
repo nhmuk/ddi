@@ -38,7 +38,7 @@
         <ul class="menu lg:menu-horizontal px-1">
             <li><a href="/about">About</a></li>
             {% for nav in collections.nav %}
-                <li><a href="{{ nav.url | url }}">{{ nav.data.title }}</a></li>
+                <li><a href="{{ nav.url }}">{{ nav.data.title }}</a></li>
             {% endfor %}
             <li><a href="/contact">Contact</a></li>
         </ul>
