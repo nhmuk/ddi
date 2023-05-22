@@ -6,7 +6,7 @@
     "watch:eleventy": "eleventy --serve",
     "watch:tailwind": "tailwindcss -i src/css/tailwind.css -o _site/css/styles.css --watch",
     "watch": "npm-run-all clean --parallel watch:*",
-    "build:eleventy": "ELEVENTY_PRODUCTION=true eleventy --pathprefix=ddi-projects",
+    "build:eleventy": "ELEVENTY_PRODUCTION=true eleventy --pathprefix=ddi",
     "build:tailwind": "tailwindcss -i src/css/tailwind.css -o _site/css/styles.css --minify",
     "build": "NODE_ENV=production ELEVENTY_PRODUCTION=true npm-run-all clean build:*"
   },
