@@ -1,0 +1,114 @@
+{% extends '../base.njk' %}
+{% from 'macros/cards.njk' import cards %}
+{% from 'macros/collection-list.njk' import collectionList %}
+
+{% set teams = collections['content:teams'] | related('people:' + page.fileSlug) %}
+
+{% block title %}{{ name }}{% endblock %}
+
+{% block header %}
+    {{ name }}
+{% endblock %}
+
+{% block subheader %}
+    {{ role }}
+{% endblock %}
+
+{% block content %}
+    <div class="grid grid-cols-[auto,1fr] gap-8 max-w-2xl mx-auto my-8 p-4 justify-items-start">
+        {% if image %}
+            <div class="avatar">
+                <div class="w-56 rounded">
+                    <img src="{{ image }}" alt="avatar for {{ name }}">
+                </div>
+            </div>
+        {% else %}
+            <div class="avatar placeholder">
+                <div class="w-56 rounded bg-neutral-focus text-neutral-content">
+                    <span class="text-4xl font-display">{{ name | initials }}</span>
+                </div>
+            </div>
+        {% endif %}
+        <table class="table table-compact table-top self-start">
+            <tr>
+                <th>Role</th>
+                <td class="whitespace-break-spaces">{{ role }}</td>
+            </tr>
+            <tr>
+                <th>Pronouns</th>
+                <td>{{ pronouns or 'unspecified' }}</td>
+            </tr>
+            {% if email %}
+                <tr>
+                    <th>Contact</th>
+                    <td><a href="mailto:{{ email }}" class="link-primary">{{ email }}</a></td>
+                </tr>
+            {% endif %}
+            {% if links and links.length > 0 %}
+                <tr>
+                    <th>Links</th>
+                    <td>
+                        <ul>
+                            {% for site in links %}
+                                <li><a href="{{ site.url }}" class="link-primary">{{ site.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            {% endif %}
+            {% if teams.length > 0 %}
+                <tr>
+                    <th>Teams</th>
+                    <td>
+                        {{ collectionList(teams) }}
+                    </td>
+                </tr>
+            {% endif %}
+        </table>
+    </div>
+
+
+    <div class="prose max-w-none">
+        {{ content | safe }}
+    </div>
+
+    <div class="grid lg:grid-flow-col gap-8 my-8 justify-items-center">
+        {% set featuredProjects = projects | item('content:projects') %}
+        {% set allProjects = collections['content:projects'] | related('people:' + page.fileSlug) %}
+        {% set featuredPosts = posts | item('content:posts') %}
+        {% set allPosts = collections['content:posts'] | related('people:' + page.fileSlug) %}
+
+        {% if featuredProjects.length > 0 or allProjects.length > 0 %}
+            <div class="flex flex-col items-center">
+                <h2>Projects</h2>
+                <div>
+                    {% if featuredProjects.length > 0 %}
+                        {{ cards({collection: featuredProjects, size: 'xs', align: 'start'}) }}
+                    {% endif %}
+                </div>
+                <div>
+                    {% if allProjects.length > 0 %}
+                        {{ collectionList(allProjects) }}
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if featuredPosts.length > 0 or allPosts.length > 0 %}
+            <div class="flex flex-col items-center">
+                <h2>Posts</h2>
+                <div>
+                    {% if featuredPosts.length > 0 %}
+                        {{ cards({collection: featuredPosts, size: 'xs', align: 'start'}) }}
+                    {% endif %}
+                </div>
+                <div>
+                    {% if allPosts.length > 0 %}
+                        {{ collectionList(allPosts) }}
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+{% endblock %}

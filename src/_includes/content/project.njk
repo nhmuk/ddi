@@ -1,0 +1,75 @@
+{% extends '../sidebar-layout.njk' %}
+{% from 'macros/collection-list.njk' import collectionList %}
+{% from 'macros/people-list.njk' import peopleList %}
+
+{% set leaders = leaders | item('content:people') %}
+{% set people = people | item('content:people') %}
+{% set teams = teams | item('content:teams') %}
+
+{% block subheader %}
+    {{ description }}
+{% endblock %}
+
+{% block sidebar %}
+    <table class="table table-compact table-top w-full">
+        <tr>
+            <th>Project lead{% if leaders.length > 1 %}s{% endif %}</th>
+            <td>{{ collectionList(leaders) }}</td>
+        </tr>
+        <tr>
+            <th>Contact</th>
+            <td><a href="mailto:{{ email }}" class="link-primary">{{ email }}</a></td>
+        </tr>
+        <tr>
+            <th>Teams</th>
+            <td>
+                {{ collectionList(teams) }}
+            </td>
+        </tr>
+        <tr>
+            <th>Other links</th>
+            <td>
+                <ul>
+                    {% for site in otherSites %}
+                        <li><a href="{{ site.url }}" class="link-primary">{{ site.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Tags</th>
+            <td>
+                <div class="flex flex-wrap">
+                    {% for tag in tags | scrub %}
+                        <a href="/tags/{{ tag }}" class="pr-2 link-primary">#{{ tag }}</a>
+                    {% endfor %}
+                </div>
+            </td>
+        </tr>
+    </table>
+    {{ peopleList(people) }}
+{% endblock %}
+
+{% block main %}
+    <img src="{{ image }}" alt="{{ imageAlt }}" class="mb-8 mx-auto">
+    {% if website %}
+        <div class="text-center mb-4">
+            <a href="{{ website }}"><h2>{{ website }}</h2></a>
+        </div>
+    {% endif %}
+
+    <div class="prose max-w-none">
+        {{ content | safe }}
+    </div>
+
+    {% if publications and publications.length > 0%}
+    <div class="my-8">
+        <h2>Publications</h2>
+        <ul>
+            {% for pub in publications %}
+                <li><a href="{{ pub.url }}" class="link-primary">{{ pub.title }}</a> ({{ pub.year }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+{% endblock %}

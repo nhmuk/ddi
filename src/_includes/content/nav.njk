@@ -1,0 +1,6 @@
+{% extends '../base.njk' %}
+{% from 'macros/cards.njk' import cards %}
+
+{% block content %}
+    {{ cards({collection: collections[contentType], size: 'lg'}) }}
+{% endblock %}

@@ -1,0 +1,64 @@
+---
+title: About
+layout: 'basic.njk'
+---
+{% from 'macros/people-list.njk' import peopleList %}
+
+{% block content %}
+    <div class="prose mx-auto min-w-full">
+        <h2>Mission & Vision</h2>
+
+        <p>Our vision is to apply digitisation, data and technology to enable research and inform policy on the natural
+            world from local to global scales.</p>
+        <p>Our ambition is to accelerate and support the digital transformation of natural science collections, applying
+            technology to construct a knowledge network that provides solutions to research and societal challenges.</p>
+
+
+        <h3>The way we work</h3>
+
+        <p>DDI connects colleagues from right through the end-to-end lifecycle of NHM data to accelerate the process of
+            making museum collections data publicly open and accessible. We continually measure the downstream impact of our work via citations in published studies. DDI advocates
+            for open data by default and champions robust data standards. We are deeply collaborative, interdisciplinary by nature, and Agile.
+
+
+        <h3>Supporting NHM Science</h3>
+
+        <p>We support both curators and researchers at the museum: connecting people, collections, specimens and their
+            data. We maintain an active presence in a number of strategic groups within the museum, including Science
+            Executive and the Collections committee.</p>
+
+        <p>We practice user-centred design and engage with our stakeholders to continuously improve the products and
+            services we provide.</p>
+
+
+        <h3>DIG (Diversity & Inclusion Group)</h3>
+
+        <p>DIG (Diversity & Inclusion Group) was formed in 2023 to bring together volunteers from across DDI to actively
+            ensure that our department is a welcoming and inclusive place to work.</p>
+
+        <p>DIG meets on a regular basis to discuss ideas, raise any concerns and coordinate activities. DIG actively
+            engages with the wider department through workshops and anonymized surveys and is accountable to DDI
+            Leadership.</p>
+
+
+        <h2>Governance</h2>
+
+        <p>The DDI Executive Team is accountable to Science Executive board. In addition to DDI Exec, the DDI Leadership
+            team directs strategy for the key groups within DDI - Digitisation, Collections data management, Data
+            platforms & engineering and AI & Innovation.</p>
+
+        <p>DDI Exec convene on a weekly basis and Leadership meet fortnightly, with All-hands meetings taking place
+            monthly.</p>
+
+        <h3>DDI Exec team</h3>
+
+        {% set execs = collections['group:exec'] | sort('group:exec') %}
+        {{ peopleList(execs) }}
+
+        <h3>DDI Leadership team</h3>
+        {% set leadership = collections['group:leadership'] | sort('group:leadership') %}
+        {{ peopleList(leadership) }}
+
+    </div>
+{% endblock %}
+

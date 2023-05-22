@@ -1,0 +1,15 @@
+{% extends './base.njk' %}
+
+{% block content %}
+    <div class="grid md:grid-cols-[300px_1fr] gap-8 p-0 min-h-screen">
+        <div class="p-4 border-r-2 border-r-accent">
+            {% block sidebar %}
+            {% endblock %}
+        </div>
+
+        <div class="pr-4">
+            {% block main %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

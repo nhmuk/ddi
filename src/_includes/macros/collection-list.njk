@@ -1,0 +1,7 @@
+{%- macro collectionList(collection) -%}
+<ul>
+    {% for item in collection %}
+        <li><a href="{{ item.url }}" class="link-primary">{{ item.data.title or item.data.name }}</a></li>
+    {% endfor %}
+</ul>
+{%- endmacro -%}

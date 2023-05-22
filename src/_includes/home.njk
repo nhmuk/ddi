@@ -1,0 +1,25 @@
+{% extends 'base.njk' %}
+{% from 'macros/cards.njk' import cards %}
+
+{% block body %}
+    <div class="grid lg:grid-cols-2 gap-8 p-12 mb-8">
+        <div class="hero">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">{{ title }}</h1>
+                    <div class="py-6 prose">{{ content | safe }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero">
+            <div class="flex flex-wrap justify-center">
+                {{ cards({collection: collections['content:teams'], size: 'sm'}) }}
+            </div>
+        </div>
+    </div>
+    <div>
+        <h1 class="text-center mb-4">Featured projects</h1>
+        {{ cards({collection: collections['featured:projects'], size: 'sm'}) }}
+    </div>
+{% endblock %}

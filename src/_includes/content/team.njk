@@ -1,0 +1,63 @@
+{% extends '../sidebar-layout.njk' %}
+{% from 'macros/cards.njk' import cards %}
+{% from 'macros/collection-list.njk' import collectionList %}
+{% from 'macros/people-list.njk' import peopleList %}
+
+{% set teamSlug = 'teams:' + page.fileSlug %}
+{% set leaders = leaders | item('content:people') %}
+{% set people = people | item('content:people') %}
+
+{% block subheader %}
+    {{ description }}
+{% endblock %}
+
+{% block sidebar %}
+    {% set teamLead = lead | item('content:people') %}
+    <table class="table table-compact table-top w-full">
+        <tr>
+            <th>Team lead{% if leaders.length > 1 %}s{% endif %}</th>
+            <td>{{ collectionList(leaders) }}</td>
+        </tr>
+        <tr>
+            <th>Contact</th>
+            <td><a href="mailto:{{ email }}" class="link-primary">{{ email }}</a></td>
+        </tr>
+    </table>
+
+    {{ peopleList(people) }}
+{% endblock %}
+
+{% block main %}
+    <div class="w-full h-96 rounded mb-8 bg-cover bg-center" style="background-image: url('{{ image | url }}')">
+        <img src="{{ image }}" alt="{{ imageAlt }}" class="sr-only">
+    </div>
+
+
+    <div class="prose max-w-none">
+        {{ content | safe }}
+    </div>
+
+    {% set collection = collections['content:projects'] | related(teamSlug) %}
+    {% if collection.length > 0 %}
+        <div class="my-8">
+            <h2>Projects:</h2>
+            {{ cards({collection: collection, size: 'sm', align: 'start'}) }}
+        </div>
+    {% endif %}
+
+    {% set collection = collections['content:posts'] | related(teamSlug) %}
+    {% if collection.length > 0 %}
+        <div class="my-8">
+            <h2>Blog posts:</h2>
+            {{ cards({collection: collection, size: 'sm', align: 'start'}) }}
+        </div>
+    {% endif %}
+
+    {% set teamTags = teamSlug | getTags %}
+    {% if teamTags.length > 0 %}
+        <div class="my-8">
+            <h2>Tags:</h2>
+            {% subtags teamSlug %}
+        </div>
+    {% endif %}
+{% endblock %}

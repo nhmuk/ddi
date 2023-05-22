@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Source+Sans+Pro&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+  h1 {
+    @apply text-4xl;
+    @apply pb-2;
+    @apply font-display;
+  }
+  h2 {
+    @apply text-2xl;
+    @apply pb-2;
+    @apply font-display;
+  }
+  h3 {
+    @apply text-xl;
+    @apply pb-2;
+    @apply font-display;
+  }
+  .prose :not(:where([class~="not-prose"])) a {
+    @apply text-primary;
+    @apply underline;
+  }
+  .table-top th,
+  .table-top td {
+    @apply align-top;
+  }
+}
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.flex-gap > *:last-child {
+  margin-right: 0;
+}
+
+.really-no-underline {
+  text-decoration-line: none !important;
+}

@@ -1,0 +1,29 @@
+{%- macro card(params) -%}
+    {%- set w = {'xs': 'w-36', 'sm': 'w-48', 'lg': 'w-96'}[params.size] -%}
+    {%- set h = {'xs': 'h-24', 'sm': 'h-24', 'lg': 'h-36'}[params.size] -%}
+    {%- set textSize = {'xs': 'text-base', 'sm': 'text-lg', 'lg': 'text-xl'}[params.size] -%}
+    <a href="{{ params.item.url }}" class="m-4 card-block">
+        <div class="card h-full bg-base-200 {{ w }}">
+            {% if params.item.data.image %}
+            <figure class="{{ h }} bg-cover bg-center" style="background-image: url({{ params.item.data.image | url }})">
+                <img class="sr-only" src="{{ params.item.data.image }}" alt="{{ params.item.data.imageAlt }}">
+            </figure>
+            {% endif %}
+            <div class="card-body{% if params.size == 'xs' %} p-4{% endif %}">
+                <h2 class="card-title {{ textSize }}">{{ params.item.data.title or params.item.data.name }}</h2>
+                {% if params.size == 'lg' %}
+                <p class="italic">{{ params.item.data.description or params.item.data.role }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </a>
+{%- endmacro  -%}
+
+
+{%- macro cards(params) -%}
+<div class="cards-container flex flex-wrap justify-{{ params.align or 'center' }}">
+    {% for item in params.collection %}
+        {{ card({item: item, size: params.size}) }}
+    {% endfor %}
+</div>
+{%- endmacro -%}

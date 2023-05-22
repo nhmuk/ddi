@@ -1,0 +1,10 @@
+{% extends './base.njk' %}
+{% from 'macros/cards.njk' import cards %}
+
+{% block header %}
+    Tagged: #{{ tag }}
+{% endblock %}
+
+{% block content %}
+    {{ cards({collection: collections[tag], size: 'lg'}) }}
+{% endblock %}

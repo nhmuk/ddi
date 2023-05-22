@@ -1,0 +1,21 @@
+{%- macro peopleList(people) -%}
+<div class="my-8 flex flex-wrap flex-gap not-prose">
+    {% for person in people %}
+        <a href="{{ person.url }}" class="mr-4 mb-4">
+            <div class="grid grid-flow-rows text-center text-sm items-center gap-1 w-24">
+                <div class="avatar mx-auto{% if not person.data.image %} placeholder{% endif %}">
+                    <div class="w-16 rounded bg-neutral-focus text-neutral-content">
+                        {% if person.data.image %}
+                            <img src="{{ person.data.image }}" alt="{{ person.data.initials }}">
+                        {% else %}
+                            <span class="text-xl font-display">{{ person.data.name | initials }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <span>{{ person.data.name }}</span>
+                <span class="text-xs">{{ person.data.role }}</span>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+{%- endmacro -%}

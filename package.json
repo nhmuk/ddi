@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "clean": "rimraf _site",
+    "watch:eleventy": "eleventy --serve",
+    "watch:tailwind": "tailwindcss -i src/css/tailwind.css -o _site/css/styles.css --watch",
+    "watch": "npm-run-all clean --parallel watch:*",
+    "build:eleventy": "ELEVENTY_PRODUCTION=true eleventy --pathprefix=ddi-projects",
+    "build:tailwind": "tailwindcss -i src/css/tailwind.css -o _site/css/styles.css --minify",
+    "build": "NODE_ENV=production ELEVENTY_PRODUCTION=true npm-run-all clean build:*"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@tailwindcss/typography": "^0.5.9",
+    "daisyui": "^2.51.6",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.0",
+    "tailwindcss": "^3.3.2",
+    "terser": "^5.17.3"
+  }
+}
