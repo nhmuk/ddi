@@ -1,3 +1,9 @@
+## v0.1.2 (2023-05-22)
+
+### Build System(s)
+
+- fix the url prefix for eleventy
+
 ## v0.1.1 (2023-05-22)
 
 ### Build System(s)
