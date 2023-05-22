@@ -1,3 +1,9 @@
+## v0.1.3 (2023-05-22)
+
+### Fix
+
+- remove url filter from nav links
+
 ## v0.1.2 (2023-05-22)
 
 ### Build System(s)
