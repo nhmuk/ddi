@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cmyk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | DDI</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/ddi-projects/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ddi-projects/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/ddi-projects/assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="/ddi-projects/assets/icons/site.webmanifest">
+    <link rel="stylesheet" href="/ddi-projects/css/styles.css">
+    <script src="/ddi-projects/assets/vendor/cash_8.1.5.js"></script>
+</head>
+
+<body>
+<nav class="grid grid-cols-[1fr,auto] items-center min-h-16 w-full p-2 bg-base-200">
+    <div class="flex">
+        <div class="flex-none pl-4">
+            <div class="w-10">
+                <img src="/ddi-projects/assets/ddi-logo.png" alt="the DDI logo">
+            </div>
+        </div>
+        <div class="flex-1">
+            <a class="px-4 normal-case sm:text-lg md:text-xl font-display whitespace-nowrap" href="/ddi-projects/">Digital, Data, and
+                informatics at the NHM</a>
+        </div>
+    </div>
+    <div class="lg:hidden">
+        <a href="javascript:void(0);" class="btn btn-ghost btn-square" onclick="toggleNav()">
+            <svg width="20" height="20" viewBox="0 0 20 20">
+                <path class="line" d="M 0,5 H 20"></path>
+                <path class="line" d="M 0,10 H 20"></path>
+                <path class="line" d="M 0,15 H 20"></path>
+            </svg>
+        </a>
+    </div>
+    <div class="hidden lg:block col-span-2 lg:col-span-1" id="menu-items">
+        <ul class="menu lg:menu-horizontal px-1">
+            <li><a href="/ddi-projects/about">About</a></li>
+            
+                <li><a href="/ddi-projects/ddi-projects/blog/">Blog</a></li>
+            
+                <li><a href="/ddi-projects/ddi-projects/projects/">Projects</a></li>
+            
+                <li><a href="/ddi-projects/ddi-projects/teams/">Teams</a></li>
+            
+            <li><a href="/ddi-projects/contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mx-auto py-16">
+    
+        <div class="text-center my-4">
+            <h1>
+                
+                    Projects
+                
+            </h1>
+            <p class="italic">
+                
+                
+            </p>
+        </div>
+
+        
+    <div class="cards-container flex flex-wrap justify-center">
+    
+        <a href="/ddi-projects/projects/data-portal/" class="m-4 card-block">
+        <div class="card h-full bg-base-200 w-96">
+            
+            <figure class="h-36 bg-cover bg-center" style="background-image: url(/ddi-projects/assets/projects/data-portal/homepage.png)">
+                <img class="sr-only" src="/ddi-projects/assets/projects/data-portal/homepage.png" alt="a screenshot of the Data Portal homepage">
+            </figure>
+            
+            <div class="card-body">
+                <h2 class="card-title text-xl">Data Portal</h2>
+                
+                <p class="italic">Online repository for research and collections datasets; allows anyone to explore, download and reuse the data for their own research.</p>
+                
+            </div>
+        </div>
+    </a>
+    
+        <a href="/ddi-projects/projects/phenome-10k/" class="m-4 card-block">
+        <div class="card h-full bg-base-200 w-96">
+            
+            <figure class="h-36 bg-cover bg-center" style="background-image: url(/ddi-projects/assets/projects/p10k/screenshot.png)">
+                <img class="sr-only" src="/ddi-projects/assets/projects/p10k/screenshot.png" alt="screenshot of phenome10k">
+            </figure>
+            
+            <div class="card-body">
+                <h2 class="card-title text-xl">Phenome10k</h2>
+                
+                <p class="italic">Phenome10K seeks to advance the field of phenomics by providing free 3D image data to the academic and educational (non-commercial) community.</p>
+                
+            </div>
+        </div>
+    </a>
+    
+        <a href="/ddi-projects/projects/scratchpads/" class="m-4 card-block">
+        <div class="card h-full bg-base-200 w-96">
+            
+            <figure class="h-36 bg-cover bg-center" style="background-image: url(/ddi-projects/assets/projects/scratchpads/phthiraptera.png)">
+                <img class="sr-only" src="/ddi-projects/assets/projects/scratchpads/phthiraptera.png" alt="picture of a phthiraptera.info, one of many scratchpads">
+            </figure>
+            
+            <div class="card-body">
+                <h2 class="card-title text-xl">Scratchpads</h2>
+                
+                <p class="italic">Scratchpads are an online virtual research environment for biodiversity, allowing anyone to share their data and create their own research networks.</p>
+                
+            </div>
+        </div>
+    </a>
+    
+</div>
+
+    
+</div>
+
+
+<script>
+    function toggleNav(){$("#menu-items").toggleClass("hidden")}$((()=>{Object.values($(".cards-container")).slice(0,-1).map($).forEach((e=>{let a=Object.values(e.find(".card-block")).slice(0,-1).map($),c=a.map((e=>e.height())).reduce(((e,a)=>Math.max(e,a)),-1/0);a.forEach((e=>{e.height(c)}))}))}));
+</script>
+</body>
+
+</html>
