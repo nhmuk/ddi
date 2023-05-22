@@ -22,10 +22,3 @@ jobs:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           changelog_increment_filename: CURRENT.md
           extra_requirements: "cz-nhm"
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          body_path: "CURRENT.md"
-          tag_name: v${{ env.REVISION }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
