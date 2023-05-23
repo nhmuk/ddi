@@ -1,3 +1,9 @@
+## v0.1.7 (2023-05-23)
+
+### Docs
+
+- add getting started info to readme
+
 ## v0.1.6 (2023-05-23)
 
 ### Minor UI Changes
