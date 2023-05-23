@@ -15,7 +15,7 @@ order:
   'team:team-slug': 0
 tags:
   - group:something
-  
+
 projects:
   - project-slug
   - another-project-slug

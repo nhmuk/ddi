@@ -23,7 +23,7 @@
     @apply pb-2;
     @apply font-display;
   }
-  .prose :not(:where([class~="not-prose"])) a {
+  .prose :not(:where([class~='not-prose'])) a {
     @apply text-primary;
     @apply underline;
   }

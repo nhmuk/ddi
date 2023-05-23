@@ -2,7 +2,7 @@
 name: Vince Smith
 role: Head of Digital, Data, and Informatics
 pronouns: unspecified
-links: 
+links:
   - title: ORCID
     url: https://orcid.org/0000-0001-5297-7452
 order:

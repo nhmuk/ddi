@@ -4,7 +4,7 @@ description: A short description
 image: /assets/teams/collections.jpg
 imageAlt: alt text
 email: someone@email.com
-leaders: 
+leaders:
   - gerry-hey
 people:
   - gerry-hey

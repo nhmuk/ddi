@@ -18,10 +18,7 @@ module.exports = function (eleventyConfig) {
     }
   });
 
-  eleventyConfig.addFilter(
-    'related',
-    require('./src/_tags/get-related.js'),
-  );
+  eleventyConfig.addFilter('related', require('./src/_tags/get-related.js'));
   eleventyConfig.addFilter('item', require('./src/_tags/get-item.js'));
   eleventyConfig.addFilter('getTags', require('./src/_tags/get-tags.js'));
   eleventyConfig.addFilter('scrub', require('./src/_tags/scrub-tags.js'));
