@@ -1,4 +1,4 @@
-const { getItem } = require('../_utils.js');
+const { getItem } = require('./_utils.js');
 
 module.exports = function (slug, contentType) {
   // get the page with the given slug within the contentType

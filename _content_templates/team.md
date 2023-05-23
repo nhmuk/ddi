@@ -23,5 +23,5 @@ Description and other long content here.
 - image: the filepath to a representative image
 - imageAlt: alt text for the representative image (describe what's in it)
 - email: a contact email for the team
-- lead: a list of the team leaders; probably only one, but you can have multiple if there are joint leaders
+- leaders: a list of the team leaders; probably only one, but you can have multiple if there are joint leaders
 - people: a list of all people in this team

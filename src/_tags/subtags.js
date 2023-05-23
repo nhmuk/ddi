@@ -1,4 +1,4 @@
-const { getTags } = require('../_utils.js');
+const { getTags } = require('./_utils.js');
 
 module.exports = function (parentContent) {
   const tags = getTags(this.ctx, parentContent);
