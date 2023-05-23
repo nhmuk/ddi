@@ -1,3 +1,13 @@
+## v0.1.5 (2023-05-23)
+
+### Refactor
+
+- move _utils.js into _tags folder
+
+### Chores/Misc
+
+- install pre-commit and run on all files
+
 ## v0.1.4 (2023-05-23)
 
 ### Fix
