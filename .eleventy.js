@@ -41,7 +41,7 @@ module.exports = function (eleventyConfig) {
       .getAll()
       .filter((c) => {
         const isProject =
-          c.data.tags && c.data.tags.includes('content:project');
+          c.data.tags && c.data.tags.includes('content:projects');
         const isFeatured = c.data.featured;
         return isProject && isFeatured;
       })
