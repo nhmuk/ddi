@@ -28,12 +28,12 @@
 {% endblock %}
 
 {% block main %}
-    <div class="w-full h-96 rounded mb-8 bg-cover bg-center" style="background-image: url('{{ image | url }}')">
+    <div class="w-full h-96 rounded mb-8 bg-cover bg-center drop-shadow" style="background-image: url('{{ image | url }}')">
         <img src="{{ image }}" alt="{{ imageAlt }}" class="sr-only">
     </div>
 
 
-    <div class="prose max-w-none">
+    <div class="prose prose-img:mx-auto lg:prose-img:px-8 xl:prose-img:px-16 prose-img:drop-shadow prose-img:rounded max-w-none">
         {{ content | safe }}
     </div>
 

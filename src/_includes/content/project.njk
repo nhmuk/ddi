@@ -20,12 +20,15 @@
             <th>Contact</th>
             <td><a href="mailto:{{ email }}" class="link-primary">{{ email }}</a></td>
         </tr>
+        {% if teams.length > 0 %}
         <tr>
             <th>Teams</th>
             <td>
                 {{ collectionList(teams) }}
             </td>
         </tr>
+        {% endif %}
+        {% if otherSites.length > 0 %}
         <tr>
             <th>Other links</th>
             <td>
@@ -36,6 +39,7 @@
                 </ul>
             </td>
         </tr>
+        {% endif %}
         <tr>
             <th>Tags</th>
             <td>
@@ -51,14 +55,14 @@
 {% endblock %}
 
 {% block main %}
-    <img src="{{ image }}" alt="{{ imageAlt }}" class="mb-8 mx-auto">
+    <img src="{{ image }}" alt="{{ imageAlt }}" class="mb-8 mx-auto drop-shadow rounded">
     {% if website %}
         <div class="text-center mb-4">
             <a href="{{ website }}"><h2>{{ website }}</h2></a>
         </div>
     {% endif %}
 
-    <div class="prose max-w-none">
+    <div class="prose prose-img:mx-auto lg:prose-img:px-8 xl:prose-img:px-16 prose-img:drop-shadow prose-img:rounded max-w-none">
         {{ content | safe }}
     </div>
 

@@ -8,7 +8,6 @@ email: data@nhm.ac.uk
 featured: true
 teams:
   - science-platforms
-  - digitisation
 leaders:
   - josh-humphries
 people:
