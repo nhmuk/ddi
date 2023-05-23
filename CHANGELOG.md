@@ -1,3 +1,10 @@
+## v0.1.6 (2023-05-23)
+
+### Minor UI Changes
+
+- add drop shadows and padding on images
+- change title spacing
+
 ## v0.1.5 (2023-05-23)
 
 ### Refactor
