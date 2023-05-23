@@ -1,3 +1,9 @@
+## v0.1.4 (2023-05-23)
+
+### Fix
+
+- fix typo in featured projects collection generator
+
 ## v0.1.3 (2023-05-22)
 
 ### Fix
